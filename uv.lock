@@ -2,6 +2,12 @@ version = 1
 revision = 3
 requires-python = ">=3.14"
 
+[manifest]
+members = [
+    "mcp-project",
+    "mcp-server",
+]
+
 [[package]]
 name = "annotated-doc"
 version = "0.0.4"
@@ -602,6 +608,17 @@ wheels = [
 name = "mcp-project"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "fastmcp" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "fastmcp", specifier = ">=2.14.5" }]
+
+[[package]]
+name = "mcp-server"
+version = "0.1.0"
+source = { virtual = "temp/mcp-server" }
 dependencies = [
     { name = "fastmcp" },
 ]
